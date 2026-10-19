@@ -6,3 +6,19 @@
 .pti-text{
     display: none;
 }
+header{
+    display: flex;
+    flex-direction: row;
+    background-color: #f9f3f4;
+    justify-content: space-between;
+    height: 69px;
+    padding: 20px;
+}
+h1{
+    font-size: 26px;
+    font-weight: 500;
+}
+nav{
+    font-size:12px;
+    padding: 10px;
+}
