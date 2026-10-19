@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 *{
     margin: 0;
     padding: 0;
@@ -6,6 +8,9 @@
 .pti-text{
     display: none;
 }
+main {
+   background-color: #f9f3f4;  
+}
 header{
     display: flex;
     flex-direction: row;
@@ -13,12 +18,68 @@ header{
     justify-content: space-between;
     height: 69px;
     padding: 20px;
+    border-bottom: 1px solid #79384E;
 }
 h1{
     font-size: 26px;
     font-weight: 500;
+    font-family: "Cormorant Garamond";
 }
 nav{
     font-size:12px;
+    padding: 20px;
+    padding-left: 4px;
+    padding-bottom: 10px;
+}
+a{
+    text-decoration: none;
+    color: #79384E;
+    margin: 8px;
+}
+.Hero{
     padding: 10px;
+}
+.Hero > p {
+    color:#79384E ;
+    font-size: 10px;
+}
+
+.Hero > h2{
+    font-size: 28px;
+    color: #342029;
+    font-weight: 300;
+    font-family: "Cormorant Garamond";
+}
+.image {
+    width: 350;
+    height: 385px;
+    margin: 10px;
+    background-color: #EEDDE0;
+    border-radius: 15px; 
+    padding-inline: 5px;
+    display: flex;
+    flex-direction: column; 
+    align-items:center ;
+    max-height: fit-content;
+}
+.nv{
+    font-size: 10px;
+    margin: 10px;
+    background-color: #FFFFFF;
+    color: #79384E;
+    font-family: "DM sans";
+    padding: 8px 12px;
+    border-radius: 15px;
+    margin-right:145px;
+
+}
+.image > h3{
+  font-size: 21px;
+  color: #342029;
+  font-family: "Cormorant Garamond";
+}
+.image > p{
+    font-size: 10px ;
+    color: #856D75;
+    padding: 15px;
 }
