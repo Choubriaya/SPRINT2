@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 *{
     margin: 0;
     padding: 0;
@@ -5,4 +7,221 @@
 }
 .pti-text{
     display: none;
+}
+main {
+   background-color: #f9f3f4;  
+}
+header{
+    display: flex;
+    flex-direction: row;
+    background-color: #f9f3f4;
+    justify-content: space-between;
+    height: 69px;
+    padding: 20px;
+    border-bottom: 1px solid #79384E;
+}
+h1{
+    font-size: 26px;
+    font-weight: 500;
+    font-family: "Cormorant Garamond";
+}
+nav{
+    font-size:12px;
+    padding: 20px;
+    padding-left: 4px;
+    padding-bottom: 10px;
+}
+a{
+    text-decoration: none;
+    color: #79384E;
+    margin: 8px;
+}
+.Hero{
+    padding: 10px;
+}
+.Hero > p {
+    color:#79384E ;
+    font-size: 10px;
+}
+
+.Hero > h2{
+    font-size: 28px;
+    color: #342029;
+    font-weight: 300;
+    font-family: "Cormorant Garamond";
+}
+.image {
+    width: 350;
+    height: 385px;
+    margin: 10px;
+    background-color: #EEDDE0;
+    border-radius: 15px; 
+    padding-inline: 5px;
+    display: flex;
+    flex-direction: column; 
+    align-items:center ;
+    max-height: fit-content;
+}
+.nv{
+    font-size: 10px;
+    margin: 10px;
+    background-color: #FFFFFF;
+    color: #79384E;
+    font-family: "DM sans";
+    padding: 8px 12px;
+    border-radius: 15px;
+    margin-right:145px;
+
+}
+.image > h3{
+  font-size: 21px;
+  color: #342029;
+  font-family: "Cormorant Garamond";
+}
+.image > p{
+    font-size: 10px ;
+    color: #856D75;
+    padding: 15px;
+}
+img{
+   height: 220px;
+}
+
+.textes{
+    margin: 20px 15px;
+}
+.txt{
+    font-size: 10px;
+    color: #79384E;
+    font-family:"DM sans" ;
+}
+.txt2{
+    font-size: 32px;
+    color: #342029;
+    font-family: "Cormorant Garamond";
+    margin-bottom: 10px;
+}
+.txt3{
+    font-size: 14px;
+    font-family:"DM sans" ;
+    color: #856D75;
+}
+.txt4 {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+}
+
+.txt4 h2{
+    font-family: "DM sans";
+    font-size: 14px;
+    color: #342029;
+
+}
+.txt4 span{
+    color: #856D75;
+    font-size: 11px;
+}
+
+.mesops input[type="radio"] {
+  display: none;
+}
+
+.options{
+    font-family: "DM sans";
+}
+.mesops {
+  display: flex;
+  gap: 20px;
+  margin-left: 10px;
+}
+
+.mesops .options {
+  border: 1px solid ;
+  border-radius: 12px;
+  background-color:whitesmoke;
+  display: flex;
+  flex-direction: column;
+}
+
+.option-ctnu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0 15px 0 5px;
+  padding: 10px;
+}
+.option-ctnu :nth-child(1) {
+    color: #342029;
+    font-size: 14px;
+}
+.option-ctnu :nth-child(2) {
+    color: #856D75;
+    font-size: 12px;
+}
+
+.mesops .options:has(input:checked) {
+  border: 2px solid #79384E; 
+  background-color: #EEDDE0;
+}
+.tein-fdt {
+    display: none;
+}
+
+.all:has(#opt:checked) .tein-fdt {
+    display: block;
+}
+.carte {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.c-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+.c-rond {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.c-chk {
+    display: none;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+
+
+}
+.c-item  input[type="radio"] {
+    display: none;
+}
+
+.c-item input:checked ~ .c-rond {
+    border: 2px solid ;
+
+}
+
+.tein-ral { 
+    margin-top: 30px;
+ }  
+
+.txt4:has(#op:checked) .tein-ral {
+    display: block;
+}
+
+.c-rond2 {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
