@@ -106,19 +106,19 @@ img{
     font-family:"DM sans" ;
     color: #856D75;
 }
-.txt4 {
+.carte {
   display: flex;
   justify-content: space-between;
   margin: 10px;
 }
 
-.txt4 h2{
+h2{
     font-family: "DM sans";
     font-size: 14px;
     color: #342029;
 
 }
-.txt4 span{
+.carte span{
     color: #856D75;
     font-size: 11px;
 }
@@ -143,7 +143,6 @@ img{
   display: flex;
   flex-direction: column;
 }
-
 .option-ctnu {
   display: flex;
   flex-direction: column;
@@ -151,6 +150,7 @@ img{
   margin: 0 15px 0 5px;
   padding: 10px;
 }
+
 .option-ctnu :nth-child(1) {
     color: #342029;
     font-size: 14px;
@@ -164,28 +164,20 @@ img{
   border: 2px solid #79384E; 
   background-color: #EEDDE0;
 }
-.tein-fdt {
+
+.les-teintes {
+    margin: 10px;
+    margin-bottom: 15px;
+    display: grid;
+    grid-template-columns:repeat(6, 1fr) ;
+}
+.colorss{
+    gap: 6px;
     display: none;
 }
-
-.all:has(#opt:checked) .tein-fdt {
-    display: block;
-}
-.carte {
-    display: flex;
-    gap: 15px;
-    margin-top: 15px;
-    margin-bottom: 15px;
-}
-.c-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 6px;
-}
-.c-rond {
-    width: 42px;
-    height: 42px;
+.color {
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -194,34 +186,61 @@ img{
 
 .c-chk {
     display: none;
-    color: #ffffff;
+    color: #281717;
     font-size: 14px;
     font-weight: bold;
 
 
 }
-.c-item  input[type="radio"] {
-    display: none;
+.colorss  input[type="radio"] {
+    /* appearance: none; */
 }
 
-.c-item input:checked ~ .c-rond {
-    border: 2px solid ;
 
-}
-
-.tein-ral { 
-    margin-top: 30px;
- }  
-
-.txt4:has(#op:checked) .tein-ral {
-    display: block;
-}
-
-.c-rond2 {
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
+.desc-fini {
     display: flex;
     align-items: center;
-    justify-content: center;
+    gap: 10px;
+    background-color: #F5E9EC;
+    padding: 10px;
+    margin: 15px ;
+    border-radius: 10px;
+    font-size: 12px;
+    color: #856D75;
+}
+
+.desc-fini span {
+    color: #803c50;
+    font-size: 20px;
+}
+#tt{
+    font-size: 10px;
+    font-family:"DM sans" ;
+    color: #856D75; 
+    padding-left: 17px;
+}
+.prix {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 15px 0;
+    margin-top: 20px;
+}
+
+.prix-label > p {
+     font-family:"DM sans" ;
+}
+.prix-label {
+    font-size: 9px;
+    color: #342029;
+}
+
+.btn-panier {
+    padding: 12px 10px;
+    border-radius: 10px;
+    background-color:#79384E ;
+    border: none;
+    color: white;
+    font-size: 10px;
 }
