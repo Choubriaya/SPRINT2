@@ -32,7 +32,7 @@ h1{
 }
 nav{
     font-size:12px;
-    padding: 20px;
+    padding: 15px;
     padding-left: 4px;
     padding-bottom: 10px;
     background-color: #f9f3f4 ;
@@ -40,7 +40,7 @@ nav{
 a{
     text-decoration: none;
     color: #79384E;
-    margin: 8px;
+    margin: 5px;
 }
 .Hero{
     padding: 10px;
@@ -286,9 +286,10 @@ footer {
 .all2{
     display: none;
 }
-.all1{
-    /* display: none; */
-}
+/* .all1{
+    /* display: none;
+ }*/
+
 .Hero > p {
     color:#79384E ;
     font-size: 10px;
@@ -458,6 +459,273 @@ footer {
   font-size: 12px;
 }
 
+
+.container {
+    width: 100%;
+    padding: 18px 12px;
+    font-family: "DM Sans";
+    color: #342029;
+}
+
+.titre {
+    margin-bottom: 20px;
+}
+
+.titre h1 {
+    font-family: "Bricolage Grotesque";
+    font-size: 25px;
+    margin-bottom: 8px;
+}
+
+.titre p {
+    color: #856D75;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.checkout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+}
+
+.panier, .paiement {
+    width: 100%;
+    background-color: #FFFFFF;
+    border: 1px solid #EEDDE0;
+    border-radius: 12px;
+    padding: 14px;
+}
+
+.panier h2, .paiement h2 {
+    font-family: "DM Sans";
+    font-size: 16px;
+    margin-bottom: 16px;
+}
+
+.entete {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 5px;
+    padding: 10px 0;
+    border-bottom: 1px solid #EEDDE0;
+    font-size: 10px;
+    font-weight: 600;
+}
+.produit {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 5px;
+    align-items: center;
+    padding: 14px 0;
+    border-bottom: 1px solid #F0E5E8;
+    font-size: 11px;
+}
+
+.produit img {
+    width: 45px;
+    height: 45px;
+    background-color: #F9F3F4;
+    border-radius: 8px;
+}
+
+.produit-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+}
+
+.produit-info p {
+    font-size: 10px;
+    color: #856D75;
+}
+
+
+.quantite {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.quantite button, .supprimer {
+    border: none;
+    background-color: #F9F3F4;
+    color: #79384E;
+    font-size: 14px;
+    border-radius: 6px;
+    padding: 5px 8px;
+}
+
+.quantite button:hover, .supprimer:hover {
+    background-color: #EEDDE0;
+}
+
+.ajout {
+    margin-top: 18px;
+    padding: 10px;
+    background-color: #F9F3F4;
+    border-radius: 10px;
+}
+
+#ajouter {
+    border: none;
+    color: #79384E;
+    font-family: "DM Sans";
+    font-size: 12px;
+    font-weight: 600;
+}
+
+#zone {
+    margin-top: 14px;
+}
+
+#zone label {
+    display: block;
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+
+#recherche {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #E4D3D9;
+    border-radius: 8px;
+    background-color: white;
+    font-family: "DM Sans";
+    font-size: 12px;
+}
+
+#recherche:focus {
+    border-color: #79384E;
+}
+
+#resultats {
+    margin-top: 10px;
+}
+
+.resultat {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 12px 0;
+    border-bottom: 1px solid #EEDDE0;
+    font-size: 11px;
+}
+
+.resultat button {
+    border: none;
+    background-color: #79384E;
+    color: white;
+    padding: 8px 10px;
+    border-radius: 7px;
+    font-size: 11px;
+    cursor: pointer;
+}
+
+.total {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 18px;
+    padding-top: 14px;
+    border-top: 1px solid #EEDDE0;
+}
+
+.total h2 {
+    margin: 0;
+}
+
+.total p {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.paiement > p {
+    font-size: 12px;
+    color: #856D75;
+    margin-bottom: 15px;
+}
+
+.paiement form section {
+    margin-bottom: 20px;
+}
+
+.paiement form h3 {
+    font-family: "DM Sans";
+    font-size: 13px;
+    margin-bottom: 14px;
+}
+
+.champs {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.champ {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 14px;
+}
+
+.champ label {
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 7px;
+}
+
+.champ input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #DCCBD1;
+    border-radius: 8px;
+    background-color: #FFFFFF;
+    font-family: "DM Sans";
+    font-size: 12px;
+}
+
+.champ input:focus {
+    border-color: #79384E;
+}
+.champ p {
+    font-size: 11px;
+    margin-top: 5px;
+    color: #E53945;
+}
+
+#payer {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 9px;
+    background-color: #79384E;
+    color: white;
+    font-family: "DM Sans";
+    font-size: 13px;
+    font-weight: 600;
+}
+
+#form > p {
+    font-size: 11px;
+    color: #856D75;
+    margin-top: 12px;
+}
+
+footer.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #F9F3F4;
+    color: #856D75;
+    font-family: "DM Sans";
+    font-size: 11px;
+    padding: 20px;
+    margin-top: 20px;
+}
 
 @media screen and (min-width: 1024px) {
   header{

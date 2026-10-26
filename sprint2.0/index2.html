@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NUANCE - Panier</title>
+    <link rel="stylesheet" href="../sprint2/style.css">
+    <script src="script2.js" defer></script>
+</head>
+
+<body>
+
+    <header class="header">
+        <h1>NUANCE</h1>
+
+        <nav>
+            <a href="#Produits">Produits</a>
+            <a href="#Panier">Panier</a>
+            <a href="#paiement">Paiement</a>
+        </nav>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section class="titre">
+            <h1>Votre commande</h1>
+            <p>Vérifiez vos articles et finalisez votre paiement en toute sécurité.</p>
+        </section>
+
+        <div class="checkout">
+            <main class="panier">
+                <h2>Votre panier</h2>
+                <div class="entete">
+                    <span>Produit</span>
+                    <span>Prix</span>
+                    <span>Total</span>
+                </div>
+
+                <div id="liste"></div>
+                <section class="ajout">
+                    <button
+                        type="button" id="ajouter"> + Ajouter un produit
+                    </button>
+
+                    <div id="zone">
+                        <label>Rechercher un produit
+
+                         <input
+                            type="search"
+                            id="recherche"
+                            placeholder="Rechercher...">
+                        </label>
+                        <div id="resultats"></div>
+                    </div>
+                </section>
+
+                <div class="total">
+                    <h2>Total</h2>
+                    <p><span id="total">0.00</span> DH</p>
+                </div>
+            </main>
+
+            <section class="paiement">
+
+                <h2>Informations de paiement</h2>
+                <p> 🔒︎ Paiement sécurisé</p>
+
+                <form id="form">
+                    <section>
+                        <h3>Informations personnelles</h3>
+
+                        <div class="champs">
+                            <div class="champ">
+                                <label for="prenom">Prénom *
+                                <input
+                                    type="text" name="prenom" placeholder="Votre prénom" required>
+                                </label>
+                                <p id="errPrenom"></p>
+                            </div>
+
+                            <div class="champ">
+                                <label>Nom *
+                                <input
+                                    type="text" name="nom" placeholder="Votre nom" required>
+                                </label>
+                                <p id="errNom"></p>
+                            </div>
+                        </div>
+
+                        <div class="champ">
+                            <label>Adresse *
+                            <input
+                                type="text"  name="adresse" placeholder="Votre adresse complète" required>
+                             </label>
+                            <p id="errAdresse"></p>
+                        </div>
+
+                        <div class="champ">
+                            <label for="email">Email *
+                            <input
+                                type="email" name="email" placeholder="exemple@domaine.com" required>
+                            </label>
+                                <p id="errEmail"></p>
+                        </div>
+
+                    </section>
+
+                    <section>
+                        <h3>Carte bancaire</h3>
+
+                        <div class="champ">
+                            <label>Numéro de carte *
+                            <input
+                                type="text" name="carte" placeholder="1234 5678 9012 3456" maxlength="19" required>
+                            </label>
+                            <p id="errCarte"></p>
+                        </div>
+
+                        <div class="champs">
+                            <div class="champ">
+                                <label>Expiration *
+                                <input type="text" name="date" placeholder="MM/AA" maxlength="5" required>
+                                </label>
+                                <p id="errDate"></p>
+                            </div>
+
+                            <div class="champ">
+                                <label for="cvv">CVV *
+                                <input
+                                    type="password" name="cvv" placeholder="123" maxlength="4" required>
+                                </label>   
+                                <p id="errCvv"></p>
+                            </div>
+
+                        </div>
+                    </section>
+
+                    <button type="submit" id="payer">
+                        $$$ Payer maintenant
+                    </button>
+                    <p>* Champs obligatoires</p>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p> 2026 NUANCE</p>
+    </footer>
+
+</body>
+</html>
