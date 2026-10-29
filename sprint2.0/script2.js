@@ -146,23 +146,4 @@ function afficherResultats() {
     }
   }
 
-  if (produitsTrouves.length === 0) {
-    resultats.innerHTML = "<p>Aucun produit trouvé.</p>";
-    return;
-  }
-  resultats.innerHTML = contenu;
-    let boutonsAjouter = resultats.querySelectorAll("button");
-    for (let j = 0; j < boutonsAjouter.length; j++) {
-      boutonsAjouter[j].addEventListener("click", function () {
-        ajouterAuPanier(produitsTrouves[j].id);
-      });
-    }
-}
-ajouter.addEventListener("click", function () {
-  zone.hidden = !zone.hidden;
-  if (!zone.hidden) {
-    afficherResultats();
-    recherche.onclick();
-  }
-});
-recherche.addEventListener("input", afficherResultats);
+ 
