@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -39,17 +40,13 @@
 
                 <div id="liste"></div>
                 <section class="ajout">
-                    <button
-                        type="button" id="ajouter"> + Ajouter un produit
+                    <button type="button" id="ajouter" aria-expanded="false" aria-controls="zone"> + Ajouter un produit
                     </button>
 
-                    <div id="zone">
+                    <div id="zone" hidden>
                         <label>Rechercher un produit
 
-                         <input
-                            type="search"
-                            id="recherche"
-                            placeholder="Rechercher...">
+                            <input type="search" id="recherche" placeholder="Rechercher...">
                         </label>
                         <div id="resultats"></div>
                     </div>
@@ -66,23 +63,21 @@
                 <h2>Informations de paiement</h2>
                 <p> 🔒︎ Paiement sécurisé</p>
 
-                <form id="form">
+                <form id="forme">
                     <section>
                         <h3>Informations personnelles</h3>
 
                         <div class="champs">
                             <div class="champ">
                                 <label for="prenom">Prénom *
-                                <input
-                                    type="text" name="prenom" placeholder="Votre prénom" required>
+                                    <input type="text" id="prénom"    name="prenom" placeholder="Votre prénom" required>
                                 </label>
                                 <p id="errPrenom"></p>
                             </div>
 
                             <div class="champ">
                                 <label>Nom *
-                                <input
-                                    type="text" name="nom" placeholder="Votre nom" required>
+                                    <input type="text" id="nom"    name="nom" placeholder="Votre nom" required>
                                 </label>
                                 <p id="errNom"></p>
                             </div>
@@ -90,18 +85,16 @@
 
                         <div class="champ">
                             <label>Adresse *
-                            <input
-                                type="text"  name="adresse" placeholder="Votre adresse complète" required>
-                             </label>
+                                <input type="text" id="adress" name="adresse" placeholder="Votre adresse complète" required>
+                            </label>
                             <p id="errAdresse"></p>
                         </div>
 
                         <div class="champ">
                             <label for="email">Email *
-                            <input
-                                type="email" name="email" placeholder="exemple@domaine.com" required>
+                                <input type="email" id="email"  name="email" placeholder="exemple@domaine.com" required>
                             </label>
-                                <p id="errEmail"></p>
+                            <p id="errEmail"></p>
                         </div>
 
                     </section>
@@ -111,8 +104,8 @@
 
                         <div class="champ">
                             <label>Numéro de carte *
-                            <input
-                                type="text" name="carte" placeholder="1234 5678 9012 3456" maxlength="19" required>
+                                <input type="text" name="carte" placeholder="1234 5678 9012 3456" maxlength="19"
+                                    required>
                             </label>
                             <p id="errCarte"></p>
                         </div>
@@ -120,16 +113,15 @@
                         <div class="champs">
                             <div class="champ">
                                 <label>Expiration *
-                                <input type="text" name="date" placeholder="MM/AA" maxlength="5" required>
+                                    <input type="text" name="date" placeholder="MM/AA" maxlength="5" required>
                                 </label>
                                 <p id="errDate"></p>
                             </div>
 
                             <div class="champ">
                                 <label for="cvv">CVV *
-                                <input
-                                    type="password" name="cvv" placeholder="123" maxlength="4" required>
-                                </label>   
+                                    <input type="password" name="cvv" placeholder="123" maxlength="4" required>
+                                </label>
                                 <p id="errCvv"></p>
                             </div>
 
@@ -150,4 +142,5 @@
     </footer>
 
 </body>
+
 </html>

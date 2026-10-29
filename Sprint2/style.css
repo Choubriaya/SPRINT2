@@ -157,7 +157,7 @@ h2{
     font-size: 12px;
 }
 
-.mesops .options:has(input:checked) {
+ .options:has(input:checked) {
   border: 2px solid #79384E; 
   background-color: #EEDDE0;
 }
@@ -194,8 +194,6 @@ h2{
     color: #281717;
     font-size: 14px;
     font-weight: bold;
-
-
 }
 .colorss  input[type="radio"] {
     appearance: none;
@@ -459,7 +457,15 @@ footer {
   font-size: 12px;
 }
 
+.panier{
+    /* display: none; */
+}
 
+
+
+.paiement{
+    display: none;
+}
 .container {
     width: 100%;
     padding: 18px 12px;
@@ -541,12 +547,36 @@ footer {
     color: #856D75;
 }
 
+.produit-details,
+.resultat-details {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.produit-details img,
+.resultat-details img {
+    object-fit: cover;
+}
+
+.resultat-details img {
+    width: 45px;
+    height: 45px;
+    border-radius: 8px;
+    background-color: #F9F3F4;
+}
+
+.resultat-details p {
+    margin: 4px 0 0;
+    color: #856D75;
+}
+
 
 .quantite {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     gap: 5px;
 }
 
@@ -709,7 +739,7 @@ footer {
     font-weight: 600;
 }
 
-#form > p {
+#forme > p {
     font-size: 11px;
     color: #856D75;
     margin-top: 12px;

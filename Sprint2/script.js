@@ -71,12 +71,12 @@ function updateColors() {
         lipstickTitle.textContent = "✓ Rouge à lèvres";
         foundationTitle.textContent = "Fond de teint";
         colors.style.display = "flex";
-        colors0.style.display ="none"
+        colors0.style.display ="none";
     } else if (foundation.checked) {
         lipstickTitle.textContent = "Rouge à lèvres";
         foundationTitle.textContent = "✓ Fond de teint";
         colors.style.display = "none";
-        colors0.style.display = "flex"
+        colors0.style.display = "flex";
     }
     updatePrice();
 }
@@ -94,19 +94,15 @@ for (let i = 0; i < teintes.length; i++) {
 }
 
 lipstick.addEventListener("change", function () {
-
     if (this.checked) {
         selectedConfig.categorie = {
             name: config.categorie.rouge.name,
             price: config.categorie.rouge.price
         };
     }
-
     updateColors();
     updatePrice();
 });
-
-
 foundation.addEventListener("change", function () {
 
     if (this.checked) {
@@ -119,6 +115,8 @@ foundation.addEventListener("change", function () {
     updateColors();
     updatePrice();
 });
+
+
 function updatePrice() {
     let total = 0;
     if (lipstick.checked) {
@@ -161,7 +159,6 @@ function updatePrice() {
 }
 
 updateColors();
-
 const all = document.querySelectorAll(".card")
 let i = 0;
 
@@ -171,7 +168,6 @@ for (let config_key in config) {
 
         namee = all[i].querySelector("div > span")
         namee.innerHTML = config[config_key][key].name;
-       
        i++
     }
 }
