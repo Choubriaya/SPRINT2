@@ -40,7 +40,7 @@
 
                 <div id="liste"></div>
                 <section class="ajout">
-                    <button type="button" id="ajouter" aria-expanded="false" aria-controls="zone"> + Ajouter un produit
+                    <button type="button" id="ajouter"> + Ajouter un produit
                     </button>
 
                     <div id="zone" hidden>
@@ -56,6 +56,9 @@
                     <h2>Total</h2>
                     <p><span id="total">0.00</span> DH</p>
                 </div>
+                <div class="payer">
+                    <button id="pay">Passer au paiement</button>
+                </div>
             </main>
 
             <section class="paiement">
@@ -70,29 +73,22 @@
                         <div class="champs">
                             <div class="champ">
                                 <label for="prenom">Prénom *
-                                    <input type="text" id="prénom"    name="prenom" placeholder="Votre prénom" required>
+                                    <input type="text" id="prénom" name="prenom" placeholder="Votre prénom" required>
                                 </label>
                                 <p id="errPrenom"></p>
                             </div>
 
                             <div class="champ">
                                 <label>Nom *
-                                    <input type="text" id="nom"    name="nom" placeholder="Votre nom" required>
+                                    <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
                                 </label>
                                 <p id="errNom"></p>
                             </div>
                         </div>
 
                         <div class="champ">
-                            <label>Adresse *
-                                <input type="text" id="adress" name="adresse" placeholder="Votre adresse complète" required>
-                            </label>
-                            <p id="errAdresse"></p>
-                        </div>
-
-                        <div class="champ">
-                            <label for="email">Email *
-                                <input type="email" id="email"  name="email" placeholder="exemple@domaine.com" required>
+                            <label>Email *
+                                <input type="email" id="email" name="email" placeholder="exemple@domaine.com" required>
                             </label>
                             <p id="errEmail"></p>
                         </div>
@@ -119,7 +115,7 @@
                             </div>
 
                             <div class="champ">
-                                <label for="cvv">CVV *
+                                <label>CVV *
                                     <input type="password" name="cvv" placeholder="123" maxlength="4" required>
                                 </label>
                                 <p id="errCvv"></p>
