@@ -75,10 +75,13 @@ function afficherPanier() {
   }
 }
 afficherPanier()
-function modifierQuantite(idProduit) {
+
+
+
+function modifierQuantite(idProduit, chang) {
   for (let i = 0; i < makeupCart.length; i++) {
     if (makeupCart[i].id === idProduit) {
-      makeupCart[i].quantity++;
+      makeupCart[i].quantity += chang;
 
       if (makeupCart[i].quantity == 0) {
         makeupCart.splice(i, 1);
@@ -88,6 +91,7 @@ function modifierQuantite(idProduit) {
     }
   }
 }
+
 
 
 function ajouterAuPanier(idProduit) {
@@ -163,7 +167,6 @@ ajouter.addEventListener("click", function () {
   zone.hidden = !zone.hidden;
   if (!zone.hidden) {
     afficherResultats();
-    recherche.onclick();
   }
 });
 
