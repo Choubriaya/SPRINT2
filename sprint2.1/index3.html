@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="script3.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+
+  <body class="bg-[#F9F3F4]">
+    <header class="bg-xhite px-10 py-5 border-b border-gray-200">
+      <h1 class="text-3xl font-bold tracking-widest text-[#963F6B]">NUANCE</h1>
+
+      <p class="text-gray-500 text-sm">Administration</p>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-6 py-10">
+      <h2 class="text-3xl font-bold text-gray-800">Ajouter un produit</h2>
+
+      <p class="text-gray-500 mt-2">
+        Remplissez les informations pour ajouter un produit au catalogue.
+      </p>
+
+      <form id="formProduit">
+        <div class="bg-white rounded-xl shadow-sm p-8 mt-8">
+          <div class="flex items-center justify-between">
+            <div class="text-center">
+              <div
+                class="bg-[#963F6B] text-white w-10 h-10 rounded-full flex items-center justify-center mx-auto"
+              >
+                1
+              </div>
+
+              <p class="text-sm mt-2 font-semibold">Informations générales</p>
+            </div>
+            <div class="flex-1 h-1 bg-gray-200 mx-4"></div>
+
+            <div class="text-center">
+              <div
+                class="bg-gray-200 text-gray-500 w-10 h-10 rounded-full flex items-center justify-center mx-auto"
+              >
+                2
+              </div>
+
+              <p class="text-sm mt-2">Caractéristiques</p>
+            </div>
+
+            <div class="flex-1 h-1 bg-gray-200 mx-4"></div>
+
+            <div class="text-center">
+              <div
+                class="bg-gray-200 text-gray-500 w-10 h-10 rounded-full flex items-center justify-center mx-auto">
+                3
+              </div>
+
+              <p class="text-sm mt-2">Récapitulatif</p>
+            </div>
+          </div>
+          <!-- mapremiere section -->
+          <section id="etape1" class="mt-10 ">
+            <h3 class="text-xl font-bold text-gray-800 mb-2">
+              Informations générales
+            </h3>
+
+            <p class="text-gray-500 text-sm mb-8">
+              Ajoutez les informations principales de votre produit.
+            </p>
+
+            <div class="mb-6">
+              <label for="nom" class="block font-medium mb-2">
+                Nom du produit *
+              </label>
+
+              <input
+                type="text"
+                id="nom"
+                name="nom"
+                placeholder="Ex : Rouge Velouté"
+                required
+                class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-[#963F6B]">
+            </div>
+
+            <div class="grid grid-cols-2 gap-6 mb-6">
+              <div>
+                <label for="type" class="block font-medium mb-2">
+                  Type d'article *
+                </label>
+
+                <select
+                  id="type"
+                  name="type"
+                  required
+                  class="w-full border border-gray-300 rounded-lg p-3 bg-white">
+                  <option value="">Choisir un type</option>
+                  <option value="Rouge à lèvres">Rouge à lèvres</option>
+                  <option value="Fond de teint">Fond de teint</option>
+                  <option value="Fard à paupières">Fard à paupières</option>
+                  <option value="Mascara">Mascara</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="prix" class="block font-medium mb-2">
+                  Prix de base (DH) *
+                </label>
+
+                <input
+                  type="number"
+                  id="prix"
+                  name="prix"
+                  placeholder="Ex : 120"
+                  required
+                  class="w-full border border-gray-300 rounded-2g p-3"
+                />
+              </div>
+            </div>
+
+            <div class="mb-6">
+              <label for="description" class="block font-medium mb-2">
+                Description *
+              </label>
+
+              <textarea
+                id="description"
+                name="description"
+                rows="4"
+                placeholder="Décrivez votre produit..."
+                required
+                class="w-full border border-gray-300 rounded-lg p-3"
+              ></textarea>
+            </div>
+
+            <div class="mb-6">
+              <label for="image" class="block font-medium mb-2">
+                Image du produit (URL) *
+              </label>
+
+              <input
+                type="url"
+                id="image"
+                name="image"
+                placeholder="https://exemple.com/image.jpg"
+                required
+                class="w-full border border-gray-300 rounded-lg p-3">
+                
+            </div>
+            <div class="flex justify-end">
+            <button
+                type="button"
+                id="suivant2"
+                class="bg-[#963F6B] text-white px-8 py-3  rounded-lg">
+                Suivant
+              </button>
+            </div>
+          </section>
+
+          <!-- etape2 -->
+          <section id="etape2" class="mt-10 ">
+            <h3 class="text-xl font-bold text-gray-800 mb-2">
+              Caractéristiques
+            </h3>
+
+            <p class="text-gray-500 text-sm mb-8">
+              Ajoutez les caractéristiques de votre produit.
+            </p>
+
+            <div class="mb-6">
+              <label for="quantite" class="block font-medium mb-2">
+                Quantité en stock *
+              </label>
+
+              <input
+                type="number"
+                id="quantite"
+                name="quantite"
+                placeholder="Ex : 20"
+                required
+                min="1"
+                class="w-full border border-gray-300 rounded-lg p-3">
+            </div>
+
+            <div class="grid grid-cols-2 gap-6 mb-6">
+              <div>
+                <label for="teinte" class="block font-medium mb-2">
+                  Teinte
+                </label>
+
+                <input
+                  type="text"
+                  id="teinte"
+                  name="teinte"
+                  placeholder="Ex : Rosewood"
+                  class="w-full border border-gray-300 rounded-lg p-3">
+              </div>
+
+              <div>
+                <label for="poids" class="block font-medium mb-2">
+                  Poids (g)
+                </label>
+
+                <input
+                  type="number"
+                  id="poids"
+                  name="poids"
+                  placeholder="Ex : 50"
+                  class="w-full border border-gray-300 rounded-lg p-3">
+              </div>
+            </div>
+            <div class="flex justify-between mt-10">
+              <button
+                type="button"
+                id="precedent1"
+                class="border border-gray-300 px-6 py-3 rounded-lg">
+                Précédent
+              </button>
+
+              <button
+                type="button"
+                id="suivant2"
+                class="bg-[#963F6B] text-white px-8 py-3 rounded-lg">
+                Suivant
+              </button>
+            </div>
+          </section>
+
+          <!-- 3page -->
+          <section id="etape3" class="mt-10">
+            <h3 class="text-xl font-bold text-gray-800 mb-2">
+                Récapitulatif </h3>
+
+            <p class="text-gray-500 text-sm mb-8">
+              Vérifiez les informations de votre produit avant de l'ajouter.
+            </p>
+
+            <div class="bg-[#F9F3F4] rounded-lg p-6">
+              <h4 class="font-bold text-lg text-[#963F6B] mb-4">
+                Informations du produit
+              </h4>
+
+              <div id="recapitulatif">
+
+              </div>
+            </div>
+
+            <div class="flex justify-between mt-10">
+              <button
+                type="button"
+                id="precedent2"
+                class="border border-gray-300 px-6 py-3 rounded-lg">
+                Précédent
+              </button>
+
+              <button
+                type="submit"
+                class="bg-[#963F6B] text-white px-8 py-3 rounded-lg">
+                Ajouter le produit
+              </button>
+
+
+            </div>
+          </section>
+        </div>
+      </form>
+    </main>
+  </body>
+</html>
