@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -27,34 +27,33 @@
           <div class="flex items-center justify-between">
             <div class="text-center">
               <div
-                class="bg-[#963F6B] text-white w-10 h-10 rounded-full flex items-center justify-center mx-auto"
+               id="bulle1" class="bg-[#963F6B] text-white w-10 h-10 rounded-full flex items-center justify-center mx-auto"
               >
                 1
               </div>
 
-              <p class="text-sm mt-2 font-semibold">Informations générales</p>
+              <p id="txt1"  class="text-sm mt-2 font-semibold">Informations générales</p>
             </div>
-            <div class="flex-1 h-1 bg-gray-200 mx-4"></div>
+            <div  id="ligne1" class="flex-1 h-1 bg-gray-200 mx-4"></div>
 
             <div class="text-center">
               <div
-                class="bg-gray-200 text-gray-500 w-10 h-10 rounded-full flex items-center justify-center mx-auto"
-              >
+                  id="bulle2" class="bg-gray-200 text-gray-500 w-10 h-10 rounded-full flex items-center justify-center mx-auto">
                 2
               </div>
 
-              <p class="text-sm mt-2">Caractéristiques</p>
+              <p  id="txt2" class="text-sm mt-2">Caractéristiques</p>
             </div>
 
-            <div class="flex-1 h-1 bg-gray-200 mx-4"></div>
+            <div id="ligne2" class="flex-1 h-1 bg-gray-200 mx-4"></div>
 
             <div class="text-center">
               <div
-                class="bg-gray-200 text-gray-500 w-10 h-10 rounded-full flex items-center justify-center mx-auto">
+                  id="bulle3" class="bg-gray-200 text-gray-500 w-10 h-10 rounded-full flex items-center justify-center mx-auto">
                 3
               </div>
 
-              <p class="text-sm mt-2">Récapitulatif</p>
+              <p  id="txt3" class="text-sm mt-2">Récapitulatif</p>
             </div>
           </div>
           <!-- mapremiere section -->
@@ -79,7 +78,9 @@
                 placeholder="Ex : Rouge Velouté"
                 required
                 class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-[#963F6B]">
+                <p  class="mb-6 err"></p>
             </div>
+          
 
             <div class="grid grid-cols-2 gap-6 mb-6">
               <div>
@@ -92,7 +93,7 @@
                   name="type"
                   required
                   class="w-full border border-gray-300 rounded-lg p-3 bg-white">
-                  <option value="">Choisir un type</option>
+                  <option value="" selected disabled>Choisir un type</option>
                   <option value="Rouge à lèvres">Rouge à lèvres</option>
                   <option value="Fond de teint">Fond de teint</option>
                   <option value="Fard à paupières">Fard à paupières</option>
@@ -106,15 +107,16 @@
                 </label>
 
                 <input
-                  type="number"
+                  type="text"
                   id="prix"
                   name="prix"
                   placeholder="Ex : 120"
                   required
-                  class="w-full border border-gray-300 rounded-2g p-3"
-                />
+                  class="w-full border border-gray-300 rounded-2g p-3">
+                  <p  class="mb-6 err"></p>
               </div>
             </div>
+
 
             <div class="mb-6">
               <label for="description" class="block font-medium mb-2">
@@ -127,8 +129,8 @@
                 rows="4"
                 placeholder="Décrivez votre produit..."
                 required
-                class="w-full border border-gray-300 rounded-lg p-3"
-              ></textarea>
+                class="w-full border border-gray-300 rounded-lg p-3">
+            </textarea>
             </div>
 
             <div class="mb-6">
@@ -143,12 +145,13 @@
                 placeholder="https://exemple.com/image.jpg"
                 required
                 class="w-full border border-gray-300 rounded-lg p-3">
-                
+                <p  class="mb-6 err"></p>
             </div>
+            
             <div class="flex justify-end">
             <button
                 type="button"
-                id="suivant2"
+                id="suivant1"
                 class="bg-[#963F6B] text-white px-8 py-3  rounded-lg">
                 Suivant
               </button>
@@ -156,7 +159,7 @@
           </section>
 
           <!-- etape2 -->
-          <section id="etape2" class="mt-10 ">
+          <section id="etape2" class="mt-10 " style="display: none">
             <h3 class="text-xl font-bold text-gray-800 mb-2">
               Caractéristiques
             </h3>
@@ -178,7 +181,9 @@
                 required
                 min="1"
                 class="w-full border border-gray-300 rounded-lg p-3">
+                 <p  class="mb-6 err"></p>
             </div>
+           
 
             <div class="grid grid-cols-2 gap-6 mb-6">
               <div>
@@ -192,7 +197,9 @@
                   name="teinte"
                   placeholder="Ex : Rosewood"
                   class="w-full border border-gray-300 rounded-lg p-3">
+                   <p  class="mb-6 err"></p>
               </div>
+              
 
               <div>
                 <label for="poids" class="block font-medium mb-2">
@@ -205,7 +212,10 @@
                   name="poids"
                   placeholder="Ex : 50"
                   class="w-full border border-gray-300 rounded-lg p-3">
+                   <p  class="mb-6 err"></p>
               </div>
+              
+
             </div>
             <div class="flex justify-between mt-10">
               <button
@@ -218,14 +228,14 @@
               <button
                 type="button"
                 id="suivant2"
-                class="bg-[#963F6B] text-white px-8 py-3 rounded-lg">
+                class="bg-[#963F6B] text-white px-8 py-3 rounded-lg" btn>
                 Suivant
               </button>
             </div>
           </section>
 
           <!-- 3page -->
-          <section id="etape3" class="mt-10">
+          <section id="etape3" class="mt-10" style="display: none">
             <h3 class="text-xl font-bold text-gray-800 mb-2">
                 Récapitulatif </h3>
 
