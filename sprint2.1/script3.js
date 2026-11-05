@@ -1,8 +1,8 @@
 const nom = document.querySelector("#nom")
 const prix = document.querySelector("#prix")
 const image = document.querySelector("#image")
-const type =document.querySelector("#type")
-const description =document.getElementById("description")
+const type = document.querySelector("#type")
+const description = document.getElementById("description")
 const suivant1 = document.querySelector("#suivant1")
 
 const suivant2 = document.querySelector("#suivant2")
@@ -33,9 +33,9 @@ const ligne2 = document.querySelector("#ligne2")
 const recap = document.querySelector("#recapitulatif")
 const formulaire = document.querySelector("#formProduit")
 
-const promotion =document.querySelector("#promo")
+const promotion = document.querySelector("#promo")
 const datepromo = document.querySelector("#date")
-const dateerr =document.querySelector("#date-err")
+const dateerr = document.querySelector("#date-err")
 
 const nomRegex = /^[a-zA-ZÀ-ÿ\s'-]+$/
 const prixRegex = /^[0-9]{2,3}$/
@@ -46,7 +46,7 @@ const poidRegex = /^(?:[1-9]\d?|1\d{2}|2[0-4]\d|250)$/
 const descrRegex = /^[a-zA-ZÀ-ÿ0-9\s,.'()\/\-:!%]{10,500}$/
 
 let Produits = [];
-
+const listeProduits = document.querySelector("#listeProduits")
 
 suivant1.addEventListener("click", function (event) {
     event.preventDefault()
@@ -56,17 +56,17 @@ suivant1.addEventListener("click", function (event) {
     let imageValide = check(image, urlRegex)
     let descrValide = check(description, descrRegex);
 
-    let typeValide = false 
-    if(type.value===""){
-        type.nextElementSibling.textContent="Veuiller choisir un type";
-        type.style.border=" 1px solid red";
-        type.nextElementSibling.style.color="red"
-        
-    }else{
+    let typeValide = false
+    if (type.value === "") {
+        type.nextElementSibling.textContent = "Veuiller choisir un type";
+        type.style.border = " 1px solid red";
+        type.nextElementSibling.style.color = "red"
+
+    } else {
         typeValide = true
-        type.nextElementSibling.textContent="Champ valide";
-        type.style.border=" 1px solid  green";
-        type.nextElementSibling.style.color="green"
+        type.nextElementSibling.textContent = "Champ valide";
+        type.style.border = " 1px solid  green";
+        type.nextElementSibling.style.color = "green"
 
     }
 
@@ -74,7 +74,7 @@ suivant1.addEventListener("click", function (event) {
 
 
 
-    if (nomValide && prixValide && imageValide && descrValide && typeValide ) {
+    if (nomValide && prixValide && imageValide && descrValide && typeValide) {
         etape1.style.display = "none";
         etape2.style.display = "block";
     }
@@ -132,67 +132,113 @@ function afficherRecap() {
         '<p>Prix : ' + prix.value + 'DH</p>' +
         '<p>Teinte : ' + teinte.value + '</p>' +
         '<p>Quantité : ' + stock.value + ' en stock</p>' +
-        '<p>Poids : ' + poids.value +  ' g</p>' +
+        '<p>Poids : ' + poids.value + ' g</p>' +
         '<p>Description du produit : ' + description.value + '</p>' +
         '</div>' +
         '</div>';
 }
-function  ajouterProduit(){
-    let prixPromo =prix.value
-    if (promotion.value !=="" ){
-        prixPromo = prix.value -(prix.value * Number(promotion.value))/100;
+function ajouterProduit() {
+    let prixPromo = prix.value
+    if (promotion.value !== "") {
+        prixPromo = prix.value - (prix.value * parseInt(promotion.value)) / 100;
     }
 
-    let nouveauProduit ={
-        nom :nom.value,
-        type : type.value,
+    let nouveauProduit = {
+        nom: nom.value,
+        type: type.value,
         prix: prix.value,
-        promotion :promotion.value,
-        prixReduit : prixPromo,
-        stock : stock.value ,
-        poids : poids.value,
-        description : description.value,
-        image : image.value ,
+        promotion: promotion.value,
+        prixReduit: prixPromo,
+        stock: stock.value,
+        poids: poids.value,
+        description: description.value,
+        image: image.value,
         promotion: promotion.value,
         datePromo: datepromo.value
     }
     Produits.push(nouveauProduit)
     afficherRecap()
-} 
+}
+
+//affichage produit diyal utilisateur 
+function afficherProduit() {
+    listeProduits.innerHTML = "";
+    for (let i = 0; i < Produits.length; i++) {
+        let carte = '<div class ="bg-white rounded-xl shadow-sm p-5 ">' +
+            '<img src="' + Produits[i].image + '"class ="w-full h-40 object-cover rounded -lg mb-4">' +
+            '<h3 class ="font-bold text-lg">' + Produits[i].nom + '</h3>' +
+            '<p class ="text-gray-500">' + Produits[i].type + '</p>' +
+            '<p>Prix : ' + Produits[i].prix + ' DH</p>'
+
+        if (Produits[i].promotion !== "") {
+            carte += '<p class="text-green-600">Promotion : ' + Produits[i].promotion + '</p>' +
+                '<p class="font-bold text-[#963F6B]" >Prix réduit : ' + Produits[i].prixReduit + ' DH</p>'
+        }
+
+        carte += '<p>Stock : ' + Produits[i].stock + '</p>' +
+            '<p>Poids : ' + Produits[i].poids + 'g</p>' +
+            '<p class="text-gray-500 mt-2">' + Produits[i].description + '</p>' +
+            '</div>'
+
+
+        listeProduits.innerHTML += carte
+
+
+    }
+}
 
 
 
 
-
-
-formulaire.addEventListener("submit",function(event){
+formulaire.addEventListener("submit", function (event) {
     event.preventDefault()
     let todaysdate = new Date()
 
 
     let yy = todaysdate.getFullYear();
-    let mm = todaysdate.getMonth()+1;
+    let mm = todaysdate.getMonth() + 1;
     let dd = todaysdate.getDate();
 
-    if(mm <10){
+    if (mm < 10) {
         mm = "0" + mm
     }
-     if(dd <10){
+    if (dd < 10) {
         dd = "0" + dd
     }
 
-    let today = yy + "-"+ mm + "-"+dd ;
+    let today = yy + "-" + mm + "-" + dd;
     dateerr.textContent = "";
     datepromo.style.border = "1px solid green";
-    if(promotion.value !=="" && datepromo.value ==""){
-        dateerr.innerHTML ="Veuillez choisir une date limite pour votre promotion !"
-        dateerr.style.color="red"
-        datepromo.style.border="1px solid red"
-    } else if(promotion.value !=="" && datepromo.value < today){
-         dateerr.textContent = "La date ne peut pas être dans le passé !";
-         dateerr.style.color = "red";
-         datepromo.style.border="1px solid red"
-    }else{
-        ajouterProduit()
-    }
-})
+    if (promotion.value !== "" && datepromo.value == "") {
+        dateerr.innerHTML = "Veuillez choisir une date limite pour votre promotion !"
+        dateerr.style.color = "red"
+        datepromo.style.border = "1px solid red"
+    } else if (promotion.value !== "" && datepromo.value < today) {
+        dateerr.textContent = "La date ne peut pas être dans le passé !";
+        dateerr.style.color = "red";
+        datepromo.style.border = "1px solid red"
+    } else {
+        Swal.fire({
+            title: "Êtes-vous sûr de vouloir ajouter ce produit ?",
+            showCancelButton: true,
+            confirmButtonText: "Oui",
+            denyButtonText: `Non`
+        }).then((result) => {
+
+            if (result.isConfirmed) {
+                ajouterProduit()
+                
+                Swal.fire({
+                    title: "Produit créé !",
+                    text: "Votre produit a bien été ajouté.",
+                    icon: "success",
+                    confirmButtonColor: "#963F6B"
+                });
+                formulaire.requestFullscreen()
+                etape3.style.display = "none";
+                etape1.style.display = "block";
+
+            }
+        })
+    }  
+ }) 
