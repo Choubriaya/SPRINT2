@@ -34,6 +34,8 @@ const recap = document.querySelector("#recapitulatif")
 const formulaire = document.querySelector("#formProduit")
 
 const promotion =document.querySelector("#promo")
+const datepromo = document.querySelector("#date")
+const dateerr =document.querySelector("#date-err")
 
 const nomRegex = /^[a-zA-ZÀ-ÿ\s'-]+$/
 const prixRegex = /^[0-9]{2,3}$/
@@ -41,7 +43,7 @@ const urlRegex = /^https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-
 const quantStockRegex = /^(?:[1-9]\d{0,3}|10000)$/
 const regexTeinte = /^[A-Za-zÀ-ÿ]+$/
 const poidRegex = /^(?:[1-9]\d?|1\d{2}|2[0-4]\d|250)$/
-const descrRegex = /^[a-zA-ZÀ-ÿ0-9\s,.'()/\-:\n\r]{10,500}$/;
+const descrRegex = /^[a-zA-ZÀ-ÿ0-9\s,.'()\/\-:!%]{10,500}$/
 
 let Produits = [];
 
@@ -52,8 +54,27 @@ suivant1.addEventListener("click", function (event) {
     let nomValide = check(nom, nomRegex)
     let prixValide = check(prix, prixRegex)
     let imageValide = check(image, urlRegex)
+    let descrValide = check(description, descrRegex);
 
-    if (nomValide && prixValide && imageValide) {
+    let typeValide = false 
+    if(type.value===""){
+        type.nextElementSibling.textContent="Veuiller choisir un type";
+        type.style.border=" 1px solid red";
+        type.nextElementSibling.style.color="red"
+        
+    }else{
+        typeValide = true
+        type.nextElementSibling.textContent="Champ valide";
+        type.style.border=" 1px solid  green";
+        type.nextElementSibling.style.color="green"
+
+    }
+
+
+
+
+
+    if (nomValide && prixValide && imageValide && descrValide && typeValide ) {
         etape1.style.display = "none";
         etape2.style.display = "block";
     }
@@ -107,32 +128,71 @@ function afficherRecap() {
         '<img class="w-40 h-40 object-cover rounded-xl" src="' + image.value + '" alt="' + nom.value + '">' +
         '<div>' +
         '<strong>' + nom.value + '</strong>' +
-        // '<p> Type : ' + type.value + '</p>' +
+        '<p> Type : ' + type.value + '</p>' +
         '<p>Prix : ' + prix.value + 'DH</p>' +
         '<p>Teinte : ' + teinte.value + '</p>' +
-        '<p>Quantité : ' + stock.value + 'en stock</p>' +
-        '<p>Poids : ' + poids.value + 'g</p>' +
-        // '<p>Description du produit : ' + description.textContent + '</p>' +
+        '<p>Quantité : ' + stock.value + ' en stock</p>' +
+        '<p>Poids : ' + poids.value +  ' g</p>' +
+        '<p>Description du produit : ' + description.value + '</p>' +
         '</div>' +
         '</div>';
 }
 function  ajouterProduit(){
+    let prixPromo =prix.value
+    if (promotion.value !=="" ){
+        prixPromo = prix.value -(prix.value * Number(promotion.value))/100;
+    }
+
     let nouveauProduit ={
         nom :nom.value,
-        // type : type.value,
+        type : type.value,
         prix: prix.value,
+        promotion :promotion.value,
+        prixReduit : prixPromo,
         stock : stock.value ,
         poids : poids.value,
-        // description : description.value,
-        image : image.value 
+        description : description.value,
+        image : image.value ,
+        promotion: promotion.value,
+        datePromo: datepromo.value
     }
     Produits.push(nouveauProduit)
     afficherRecap()
 } 
 
-const ajouter = document.querySelector("#ajouter")
-ajouter.addEventListener("click", function(){
-    
 
 
+
+
+
+formulaire.addEventListener("submit",function(event){
+    event.preventDefault()
+    let todaysdate = new Date()
+
+
+    let yy = todaysdate.getFullYear();
+    let mm = todaysdate.getMonth()+1;
+    let dd = todaysdate.getDate();
+
+    if(mm <10){
+        mm = "0" + mm
+    }
+     if(dd <10){
+        dd = "0" + dd
+    }
+
+    let today = yy + "-"+ mm + "-"+dd ;
+    dateerr.textContent = "";
+    datepromo.style.border = "1px solid green";
+    if(promotion.value !=="" && datepromo.value ==""){
+        dateerr.innerHTML ="Veuillez choisir une date limite pour votre promotion !"
+        dateerr.style.color="red"
+        datepromo.style.border="1px solid red"
+    } else if(promotion.value !=="" && datepromo.value < today){
+         dateerr.textContent = "La date ne peut pas être dans le passé !";
+         dateerr.style.color = "red";
+         datepromo.style.border="1px solid red"
+    }else{
+        ajouterProduit()
+    }
 })

@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
+  <title>NUANCE</title>
   <script src="script3.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
@@ -90,6 +90,7 @@
                 <option value="Fard à paupières">Fard à paupières</option>
                 <option value="Mascara">Mascara</option>
               </select>
+              <p class="mb-6 err"></p>
             </div>
 
             <div>
@@ -112,6 +113,7 @@
             <textarea id="description" name="description" rows="4" placeholder="Décrivez votre produit..."
               class="w-full border border-gray-300 rounded-lg p-3">
             </textarea>
+            <p class="mb-6 err"></p>
           </div>
 
           <div class="mb-6">
@@ -213,11 +215,11 @@
           </label>
           
           <select id="promo" class="w-full border border-gray-300 rounded-lg p-3 bg-white">
-            <option selected disabled>Profiter de . . . </option>
-            <option> moin de 10%</option>
-            <option> moin de 20%</option>
-            <option> moin de 40%</option>
-            <option> moin de 50%</option>
+            <option value="" selected>Aucune promotion</option>
+            <option value="10%"> moin de 10%</option>
+            <option value="20%"> moin de 20%</option>
+            <option value="40%"> moin de 40%</option>
+            <option value="50%"> moin de 50%</option>
 
           </select>
           </div>
@@ -225,7 +227,8 @@
            <label for="date" class="block font-medium mb-2">
             Date fin promo *
           </label>
-          <input id="date" type="date" class="w-full border border-gray-300 rounded-lg p-3 bg-white">
+          <input id="date" type="date" class="w-full border border-gray-300 rounded-lg p-3 bg-white mb-2">
+          <p id="date-err"></p>
            </div>
           </div>
 
