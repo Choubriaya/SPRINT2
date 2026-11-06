@@ -157,15 +157,17 @@ function ajouterProduit() {
         datePromo: datepromo.value
     }
     Produits.push(nouveauProduit)
-    afficherRecap()
+    // afficherRecap()
+    afficherProduit()
 }
 
 //affichage produit diyal utilisateur 
 function afficherProduit() {
     listeProduits.innerHTML = "";
     for (let i = 0; i < Produits.length; i++) {
+        console.log(Produits[i].image)
         let carte = '<div class ="bg-white rounded-xl shadow-sm p-5 ">' +
-            '<img src="' + Produits[i].image + '"class ="w-full h-40 object-cover rounded -lg mb-4">' +
+            '<img src="' + Produits[i].image + '"class ="w-full h-40 object-cover rounded-lg mb-4">' +
             '<h3 class ="font-bold text-lg">' + Produits[i].nom + '</h3>' +
             '<p class ="text-gray-500">' + Produits[i].type + '</p>' +
             '<p>Prix : ' + Produits[i].prix + ' DH</p>'
@@ -227,18 +229,22 @@ formulaire.addEventListener("submit", function (event) {
 
             if (result.isConfirmed) {
                 ajouterProduit()
-                
+
                 Swal.fire({
                     title: "Produit créé !",
                     text: "Votre produit a bien été ajouté.",
                     icon: "success",
                     confirmButtonColor: "#963F6B"
                 });
-                formulaire.requestFullscreen()
-                etape3.style.display = "none";
-                etape1.style.display = "block";
 
             }
+            if (!result.isConfirmed) {
+                formulaire.reset();
+
+                etape3.style.display = "none";
+                etape1.style.display = "block";
+            }
         })
-    }  
- }) 
+    }
+})
+console.log(Swal)
