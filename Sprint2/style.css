@@ -457,12 +457,6 @@ footer {
   font-size: 12px;
 }
 
-.panier{
-    /* display: none; */
-}
-
-
-
 .paiement{
     display: none;
 }
@@ -607,6 +601,22 @@ footer {
     font-size: 12px;
     font-weight: 600;
 }
+
+.payer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+#pay{
+   border: none;
+    color: #F9F3F4;
+    background-color: #79384E;
+    font-size: 17px;
+    border-radius: 8px;
+    padding: 8px  ;
+    margin: 15px 0px;
+}
+
 
 #zone {
     margin-top: 14px;
